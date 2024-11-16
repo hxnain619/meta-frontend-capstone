@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <div className="bg-orange p-8 pt-10 min-h-[550px]">
+    <div className="bg-orange/50 p-8 pt-10 min-h-[550px]">
       <div className="container mx-auto my-0">
         <h2 className="font-bold mb-4">About</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -28,12 +28,12 @@ function About() {
           </div>
           <div className="relative">
             <img
-              src={require("../images/MarioA.jpg")}
+              src={require("../../images/MarioA.jpg")}
               alt="Adrian and Mario"
               className="max-w-[32rem] w-full h-full object-cover rounded-lg shadow-md"
             />
             <img
-              src={require("../images/MarioB.jpg")}
+              src={require("../../images/MarioB.jpg")}
               alt="Adrian and Mario"
               className="absolute max-w-[32rem] bottom-14 -right-1 z-2 w-full h-full object-cover rounded-lg shadow-md"
             />

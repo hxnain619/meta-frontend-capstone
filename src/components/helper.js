@@ -1,19 +1,19 @@
 export const navRoutes = [
   {
     title: "Menu",
-    path: "/menu",
+    path: "#",
   },
   {
     title: "Reservations",
-    path: "/reservations",
+    path: "#",
   },
   {
     title: "Order online",
-    path: "/order",
+    path: "#",
   },
   {
     title: "Login",
-    path: "/login",
+    path: "#",
   },
 ];
 export const specialsData = [

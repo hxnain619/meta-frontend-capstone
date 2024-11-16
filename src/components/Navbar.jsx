@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import LogoLong from "../images/icon/Logo-long.svg";
+import LogoLong from "../images/icon/Logo.svg";
 import Hamburger from "../images/icon/icon_hamburger_menu.svg";
 import { navRoutes } from "./helper";
 
@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-green z-50">
+    <div className="fixed top-0 left-0 w-full bg-green/50 z-50">
       <div className="container mx-auto flex justify-between items-center p-4">
         <h1 className="text-xl font-bold text-yellow">
           <Link href="/">
