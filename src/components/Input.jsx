@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ label, id, type, placeholder, value, onChange }) => {
+const Input = ({ label, id, type, placeholder, value, onChange, ...props }) => {
   return (
     <div className="mb-4 w-full">
       <label
@@ -10,12 +10,16 @@ const Input = ({ label, id, type, placeholder, value, onChange }) => {
         {label}
       </label>
       <input
+        data-testid={id}
         name={id}
         type={type}
         id={id}
-        placeholder={placeholder ?? `Select ${id}`}
+        placeholder={placeholder ?? `Enter ${label}`}
         value={value}
         onChange={onChange}
+        aria-required="true"
+        aria-labelledby={`${id}-label`}
+        {...props}
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       />
     </div>

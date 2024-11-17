@@ -12,21 +12,30 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-green/50 z-50">
+    <nav
+      data-testid="nav"
+      aria-label="Main Navigation"
+      className="fixed top-0 left-0 w-full bg-green/50 z-50"
+    >
       <div className="container mx-auto flex justify-between items-center p-4">
         <h1 className="text-xl font-bold text-yellow">
-          <Link href="/">
-            <img src={LogoLong} alt="Little lemon logo" />
+          <Link to="/" aria-label="Little Lemon Home">
+            <img src={LogoLong} alt="Little Lemon Logo" />
           </Link>
         </h1>
+
+        {/* Hamburger Menu Button */}
         <button
           type="button"
           onClick={toggleSidebar}
+          aria-controls="mobile-menu"
+          aria-expanded={isOpen}
           className="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 hover:text-yellow-500"
         >
-          <img src={Hamburger} alt="hamburger icon" />
+          <img src={Hamburger} alt="Open navigation menu" />
         </button>
 
+        {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-4 text-white">
           {navRoutes.map((route) => (
             <li
@@ -44,8 +53,11 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Sidebar for mobile devices */}
+      {/* Sidebar for Mobile Devices */}
       <div
+        id="mobile-menu"
+        role="dialog"
+        aria-hidden={!isOpen}
         className={`fixed top-0 left-0 w-full h-screen bg-gray-800 bg-opacity-75 transition-all duration-300 ease-in-out transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
@@ -54,6 +66,7 @@ const Navbar = () => {
           <div className="flex justify-end p-4">
             <button
               onClick={toggleSidebar}
+              aria-label="Close navigation menu"
               className="text-white hover:text-yellow-500"
             >
               Close
@@ -74,7 +87,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

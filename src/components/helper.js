@@ -45,24 +45,30 @@ export const testimonials = [
     name: "John Doe",
     rating: 5,
     review: "This is a great product. I highly recommend it!",
-    photo: "https://example.com/user1.jpg", // Replace with actual photo URL
+    photo: "https://example.com/user1.jpg",
   },
   {
     name: "Jane Smith",
     rating: 4,
     review: "This product is good, but could be better.",
-    photo: "https://example.com/user2.jpg", // Replace with actual photo URL
+    photo: "https://example.com/user2.jpg",
   },
   {
     name: "Mike Johnson",
     rating: 5,
     review: "I love this product!",
-    photo: "https://example.com/user3.jpg", // Replace with actual photo URL
+    photo: "https://example.com/user3.jpg",
   },
   {
     name: "Sarah Lee",
     rating: 3,
     review: "This product is okay.",
-    photo: "https://example.com/user4.jpg", // Replace with actual photo URL
+    photo: "https://example.com/user4.jpg",
   },
+];
+
+export const FooterLinks = [
+  { title: "Contact Info", items: ["Phone Number:", "Email:"] },
+  { title: "About", items: ["About Us", "Menu", "Reservations"] },
+  { title: "Social Media Links", items: ["Facebook", "Instagram", "Twitter"] },
 ];

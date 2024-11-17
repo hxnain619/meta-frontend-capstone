@@ -33,8 +33,10 @@ const Bookings = () => {
   };
 
   const updateTimes = (date) => {
-    dispatch({ type: "SET_DATE", payload: date });
-    dispatch({ type: "UPDATE_TIMES", payload: fetchAPI(new Date(date)) });
+    if (date.length) {
+      dispatch({ type: "SET_DATE", payload: date });
+      dispatch({ type: "UPDATE_TIMES", payload: fetchAPI(new Date(date)) });
+    }
   };
 
   useEffect(() => {
@@ -49,22 +51,45 @@ const Bookings = () => {
         image="https://example.com/og-image.jpg"
         url="https://littlelemon.com"
       />
-      <main className="container my-0 mx-auto p-10 h-full">
+      <main
+        className="container my-0 mx-auto p-10 h-full"
+        role="main"
+        aria-labelledby="bookings-page-title"
+      >
+        <h1 id="bookings-page-title" className="sr-only">
+          Book a Table at Little Lemon
+        </h1>
         <div className="h-14" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 shadow-md min-h-[500px]">
-          <div className="bg-black p-8 pt-10 rounded-l-md">
+          <div
+            className="bg-black p-8 pt-10 rounded-l-md"
+            role="complementary"
+            aria-labelledby="info-section"
+          >
             {/* Text content column */}
             <p className="mb-4">
-              <img src={Logo} alt="logo" className="w-2/4" />
+              <img
+                src={Logo}
+                alt="Little Lemon logo"
+                className="w-2/4"
+                aria-hidden="true"
+              />
             </p>
             <br />
-            <p className="text-gray-600 mb-4 text-white mt-4">
+            <p
+              className="text-gray-600 mb-4 text-white mt-4"
+              id="info-section"
+              aria-describedby="info-description"
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <p className="text-gray-600 mb-4 text-white mt-4">
+            <p
+              className="text-gray-600 mb-4 text-white mt-4"
+              id="info-description"
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

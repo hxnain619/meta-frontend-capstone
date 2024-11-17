@@ -1,12 +1,19 @@
 import React from "react";
+import MarioA from "../../images/MarioA.jpg";
+import MarioB from "../../images/MarioB.jpg";
 
 function About() {
   return (
-    <div className="bg-orange/50 p-8 pt-10 min-h-[550px]">
+    <section
+      aria-labelledby="about-title"
+      className="bg-orange/50 p-8 pt-10 min-h-[550px]"
+    >
       <div className="container mx-auto my-0">
-        <h2 className="font-bold mb-4">About</h2>
+        <h2 id="about-title" className="font-bold mb-4">
+          About
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
+          <article>
             <h3 className="font-bold mb-2">Little Lemon</h3>
             <h4 className="text-gray-600">Chicago</h4>
             <p className="text-gray-600 max-w-[90%] text-justify">
@@ -25,22 +32,24 @@ function About() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-          </div>
+          </article>
           <div className="relative">
             <img
-              src={require("../../images/MarioA.jpg")}
-              alt="Adrian and Mario"
+              src={MarioA}
+              alt="Mario and Adrian enjoying a meal"
               className="max-w-[32rem] w-full h-full object-cover rounded-lg shadow-md"
+              loading="lazy"
             />
             <img
-              src={require("../../images/MarioB.jpg")}
-              alt="Adrian and Mario"
+              src={MarioB}
+              alt="Mario and Adrian preparing food"
               className="absolute max-w-[32rem] bottom-14 -right-1 z-2 w-full h-full object-cover rounded-lg shadow-md"
+              loading="lazy"
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

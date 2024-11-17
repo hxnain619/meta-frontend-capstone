@@ -1,4 +1,4 @@
-const Select = ({ id, label, value, onChange, options }) => {
+const Select = ({ id, label, value, onChange, options, ...props }) => {
   return (
     <div className="mb-4 w-full">
       <label
@@ -12,12 +12,14 @@ const Select = ({ id, label, value, onChange, options }) => {
         name={id}
         value={value}
         onChange={onChange}
+        aria-label={label}
+        {...props}
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       >
-        <option value="" defaultChecked>
+        <option value="" disabled hidden>
           Select {label}
         </option>
-        {options?.length &&
+        {options?.length > 0 &&
           options.map((opt) => (
             <option key={opt} value={opt}>
               {opt}
