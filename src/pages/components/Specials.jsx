@@ -36,7 +36,6 @@ function Specials() {
                     "bg-dessert": special.id === 3,
                   }
                 )}
-                style={{ backgroundImage: `url(${special.imageUrl})` }}
                 alt={`${special.title} image`}
                 role="img"
                 aria-label={`Image of ${special.title}`}
@@ -60,7 +59,7 @@ function Specials() {
               {/* Order Button */}
               <button
                 aria-label="Order delivery"
-                className="flex items-center justify-between bg-yellow hover:bg-orange text-black font-bold py-2 px-4 rounded mt-4"
+                className="flex items-center justify-between gap-2 bg-yellow hover:bg-orange text-black font-bold py-2 px-4 rounded mt-4"
                 role="button"
               >
                 <span>Order a delivery</span>

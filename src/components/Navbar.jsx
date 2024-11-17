@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav
       data-testid="nav"
       aria-label="Main Navigation"
-      className="fixed top-0 left-0 w-full bg-green/50 z-50"
+      className="fixed top-0 left-0 w-full bg-green/50 z-50 shadow-lg"
     >
       <div className="container mx-auto flex justify-between items-center p-4">
         <h1 className="text-xl font-bold text-yellow">
@@ -40,7 +40,7 @@ const Navbar = () => {
           {navRoutes.map((route) => (
             <li
               key={route.title}
-              className="hover:text-orange border-b-2 border-transparent hover:border-orange"
+              className="text-green hover:text-orange border-b-2 border-transparent hover:border-orange"
             >
               <Link
                 to={route.path}

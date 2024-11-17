@@ -5,26 +5,27 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <section
-      className="bg-green/30 mt-20 mb-[13rem] md:mt-6 md:mb-10 flex flex-col md:flex-row-reverse items-center justify-between px-6 md:px-12 lg:px-24"
-      role="region"
+      className="bg-green/50 mt-0 mb-[13rem] md:m-0 pt-12 mb-0 md:mb-10 flex flex-col md:flex-row-reverse items-center justify-between px-6 md:px-12 lg:px-24"
       aria-labelledby="hero-section"
     >
       {/* Image Section */}
       <div
-        className="w-full md:w-1/2 flex justify-center"
+        className="relative w-full md:w-1/2 flex justify-center min-h-[20em]"
         role="img"
         aria-label="Restaurant interior"
       >
-        <img
-          src={RestaurantImg}
-          alt="Restaurant"
-          className="rounded-md shadow-lg max-w-full md:max-w-lg"
-          loading="lazy"
-        />
+        <div className="mt-10 md:mt-0 md:absolute md:top-16 md:right-0">
+          <img
+            src={RestaurantImg}
+            alt="Restaurant"
+            className="rounded-md shadow-lg min-h-60 max-w-full md:max-w-lg"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       {/* Text Section */}
-      <div className="w-full md:w-1/2 text-center md:text-left">
+      <div className="w-full mb-5 md:w-1/2 text-center md:text-left">
         <h1
           id="hero-section"
           className="text-4xl md:text-5xl font-bold text-green mb-4"
