@@ -15,7 +15,7 @@ const Home = () => {
         url="https://littlelemon.com"
       />
       <Header />
-      <div className="mb-[8rem]" />
+      <div className="md:mb-[8rem]" />
       <Specials />
       <Testimonials />
       <About />
