@@ -57,9 +57,6 @@ const BookingForm = ({ availableTimes, selectedDate, updateTimes }) => {
             handleChange(e);
             updateTimes(e.target.value);
           }}
-          aria-required="true"
-          aria-invalid={!!errors.date}
-          aria-describedby="date-error"
         />
         {errors.date && (
           <p id="date-error" className="text-red-500 text-sm">
@@ -73,9 +70,6 @@ const BookingForm = ({ availableTimes, selectedDate, updateTimes }) => {
           options={availableTimes ?? []}
           value={formData.time}
           onChange={handleChange}
-          aria-required="true"
-          aria-invalid={!!errors.time}
-          aria-describedby="time-error"
         />
         {errors.time && (
           <p id="time-error" className="text-red-500 text-sm">
@@ -91,9 +85,6 @@ const BookingForm = ({ availableTimes, selectedDate, updateTimes }) => {
           placeholder="Select guests"
           value={formData.guests}
           onChange={handleChange}
-          aria-required="true"
-          aria-invalid={!!errors.guests}
-          aria-describedby="guests-error"
         />
         {errors.guests && (
           <p id="guests-error" className="text-red-500 text-sm">
@@ -107,9 +98,6 @@ const BookingForm = ({ availableTimes, selectedDate, updateTimes }) => {
           options={OccasionOptions}
           value={formData.occasion}
           onChange={handleChange}
-          aria-required="true"
-          aria-invalid={!!errors.occasion}
-          aria-describedby="occasion-error"
         />
         {errors.occasion && (
           <p id="occasion-error" className="text-red-500 text-sm">
@@ -117,18 +105,6 @@ const BookingForm = ({ availableTimes, selectedDate, updateTimes }) => {
           </p>
         )}
       </div>
-      {Object.keys(errors).length > 0 && (
-        <div className="text-red-500 mb-2">
-          <h4 data-testid="error">Please fix the following errors:</h4>
-          <ul>
-            {Object.entries(errors).map(([key, value]) => (
-              <li key={key} className="body-font">
-                {value}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
       <button
         type="submit"
         className="bg-yellow hover:bg-orange text-black font-bold py-2 px-4 rounded mt-4"

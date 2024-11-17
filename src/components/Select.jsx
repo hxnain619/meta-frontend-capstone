@@ -3,6 +3,7 @@ const Select = ({ id, label, value, onChange, options, ...props }) => {
     <div className="mb-4 w-full">
       <label
         htmlFor={id}
+        aria-labelledby={label}
         className="block text-gray-700 text-sm font-bold mb-2"
       >
         {label}
@@ -12,7 +13,6 @@ const Select = ({ id, label, value, onChange, options, ...props }) => {
         name={id}
         value={value}
         onChange={onChange}
-        aria-label={label}
         {...props}
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       >

@@ -35,8 +35,10 @@ describe("BookingForm Validation", () => {
     const submitButton = screen.getByRole("button", {
       name: /submit reservation/i,
     });
+
     fireEvent.click(submitButton);
 
+    // Check for the presence of validation error messages
     expect(screen.getByText("Please select a time.")).toBeInTheDocument();
     expect(
       screen.getByText("Please enter the number of guests.")
@@ -61,6 +63,7 @@ describe("BookingForm Validation", () => {
 
     fireEvent.click(submitButton);
 
+    // Check that validation errors are removed
     expect(screen.queryByText("Please select a time.")).not.toBeInTheDocument();
     expect(
       screen.queryByText("Please enter the number of guests.")
@@ -81,8 +84,22 @@ describe("BookingForm Validation", () => {
     fireEvent.change(guestsInput, { target: { value: "invalid" } });
     fireEvent.click(submitButton);
 
+    // Check for the specific error message for non-numeric input
     expect(
       screen.getByText("Please enter the number of guests.")
     ).toBeInTheDocument();
+  });
+
+  it("does not show validation errors on initial render", () => {
+    renderForm();
+
+    // Ensure no validation error is shown on initial load
+    expect(screen.queryByText("Please select a time.")).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Please enter the number of guests.")
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Please select an occasion.")
+    ).not.toBeInTheDocument();
   });
 });

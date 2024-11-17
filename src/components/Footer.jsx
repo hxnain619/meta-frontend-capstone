@@ -15,7 +15,6 @@ const Footer = () => {
           src={Logo}
           alt="Little Lemon Logo"
           className="w-3/4 h-34 mx-0 my-auto"
-          aria-hidden="true"
         />
         {FooterLinks.map((linkGroup) => (
           <div key={linkGroup.title}>
